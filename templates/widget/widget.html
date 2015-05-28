@@ -1,0 +1,16 @@
+{% load widget_tags %}
+{{ widget_list.widgets }}
+{% widget_list %}
+{% for i in widget_list %}
+{% if i.show_in_widget %}
+<hr>
+<h3>
+{{ i.title }}
+{% endif %}
+</h3>
+<p>
+{% if i.show_in_widget %}
+{{ i.content|safe }}
+{% endif %}
+</p>
+{% endfor %}
